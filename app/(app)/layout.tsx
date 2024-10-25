@@ -79,13 +79,15 @@ export default async function RootLayout({
 
   return (
     <>
-      <Nav
-        session={session}
-        algoliaSearchConfig={algoliaSearchConfig}
-        username={userData?.username || null}
-      />
-      {children}
-      <Footer />
+      <div className="grid min-h-screen grid-rows-[auto_1fr_auto]">
+        <Nav
+          session={session}
+          algoliaSearchConfig={algoliaSearchConfig}
+          username={userData?.username || null}
+        />
+        {children}
+        <Footer />
+      </div>
     </>
   );
 }
